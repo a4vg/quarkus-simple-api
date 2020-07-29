@@ -4,6 +4,8 @@ public class Address {
     public String avenue;
     public String number;
 
+    public Address(){}; // needed by JSON serializer
+
     public Address (String _country, String _city, String _avenue, String _number) {
         this.country = _country;
         this.city = _city;
