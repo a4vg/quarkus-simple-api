@@ -5,7 +5,12 @@ import javax.ws.rs.core.MediaType;
 
 @Path("mis-datos")
 public class PersonResource {
-    Person me = new Person("Andrea", "Velasquez", 19);
+    Person me;
+
+    public PersonResource() {
+        Address address = new Address("Peru","Lima", "Machu Picchu", "123" );
+        this.me = new Person("Andrea", "Velasquez", 19, address);
+    }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
