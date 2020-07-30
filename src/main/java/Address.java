@@ -1,4 +1,5 @@
 public class Address {
+    private Long id;
     private String country;
     private String city;
     private String avenue;
@@ -14,6 +15,14 @@ public class Address {
     }
 
     // Getters and setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getCountry() {
         return country;
     }
