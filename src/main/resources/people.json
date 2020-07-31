@@ -1,0 +1,13 @@
+[{
+  "address": {
+    "personId": 1,
+    "avenue": "Machu Picchu",
+    "city": "Lima",
+    "country": "Peru",
+    "number": "123"
+  },
+  "id": 1,
+  "age": 19,
+  "lastName": "Velasquez",
+  "name": "Andrea"
+}]

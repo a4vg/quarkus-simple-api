@@ -1,5 +1,8 @@
+import javax.json.bind.annotation.JsonbCreator;
+import javax.json.bind.annotation.JsonbProperty;
+
 public class Address {
-    private Long id;
+    private Long personId;
     private String country;
     private String city;
     private String avenue;
@@ -7,7 +10,15 @@ public class Address {
 
     public Address(){}; // needed by JSON serializer
 
-    public Address (String _country, String _city, String _avenue, String _number) {
+    @JsonbCreator
+    public Address (
+            @JsonbProperty("personId") Long _personId,
+            @JsonbProperty("country") String _country,
+            @JsonbProperty("city") String _city,
+            @JsonbProperty("avenue") String _avenue,
+            @JsonbProperty("number") String _number
+    ) {
+        this.personId = _personId;
         this.country = _country;
         this.city = _city;
         this.avenue = _avenue;
@@ -15,12 +26,12 @@ public class Address {
     }
 
     // Getters and setters
-    public Long getId() {
-        return id;
+    public Long getPersonId() {
+        return personId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setPersonId(Long personId) {
+        this.personId = personId;
     }
 
     public String getCountry() {

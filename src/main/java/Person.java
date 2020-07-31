@@ -1,3 +1,6 @@
+import javax.json.bind.annotation.JsonbCreator;
+import javax.json.bind.annotation.JsonbProperty;
+
 public class Person {
     private Long id;
     private String name;
@@ -7,7 +10,15 @@ public class Person {
 
     public Person(){} // needed by JSON serializer
 
-    public Person(String _name, String _lastName, Integer _age, Address _address) {
+    @JsonbCreator
+    public Person(
+            @JsonbProperty("id") Long _id,
+            @JsonbProperty("name") String _name,
+            @JsonbProperty("lastName") String _lastName,
+            @JsonbProperty("age") Integer _age,
+            @JsonbProperty("address") Address _address
+    ) {
+        this.id = _id;
         this.name = _name;
         this.lastName = _lastName;
         this.age = _age;
